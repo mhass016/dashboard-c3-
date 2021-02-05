@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cases per 100 thousand in Hackney</title>
+
+    <link href="js/c3.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/d3.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/c3.min.js"></script>
+
+    <style>
+        .container {
+            max-width:600px;
+            margin: 0 auto;
+            font-family: Helvetica;
+            line-height: 1.4em;
+        }
+
+        H1 {
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="chart"></div>
+
+    </div>
+    <h1>Coronavirus Cases per 100,000 in Hackney & City Of London</h1>
+    <div id="chart2"></div>
+    <script type="text/javascript">
+    var chart2 = c3.generate({
+      bindto: '#chart2',
+      padding: {
+          top: 10,
+          right: 60,
+          bottom: 10,
+          left: 60
+      },
+        data: {
+            x: 'x',
+           // xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+            columns: [
+              ['x','2021-01-01', '2021-01-02', '2021-01-03', '2021-01-04', '2021-01-05', '2021-01-06', '2021-01-07', '2021-01-08', '2021-01-09', '2021-01-10', '2021-01-11', '2021-01-12', '2021-01-13', '2021-01-14', '2021-01-15', '2021-01-16', '2021-01-17', '2021-01-18', '2021-01-19', '2021-01-20', '2021-01-21', '2021-01-22', '2021-01-23', '2021-01-24', '2021-01-25', '2021-01-26', '2021-01-27', '2021-01-28', '2021-01-29', '2021-01-30', '2021-01-31'],
+               // ['x', '20130101', '20130102', '20130103', '20130104', '20130105', '20130106'],
+                ['Coronavirus Cases per 100,000 Population in Hackney & City Of London (In 7-day period)', 929, 922.2, 911.5, 988.5, 933.5, 904.6, 886.7, 926.3, 910.5, 859.9, 810.1, 769.5, 742.7, 713.4, 695.9, 662.6, 638.5, 594.1, 556.7, 510.6, 482.4, 442.9, 426.7, 399.5, 355.9, 324.2, 297.8, 261.3, 244.5, 224.5, 214.6]
+            ]
+        },
+        axis: {
+            x: {
+                type: 'timeseries',
+                tick: {
+                  outer: false,
+                    format: '%m-%d',
+                    values:['2021-01-01', '2021-01-05', '2021-01-10', '2021-01-15', '2021-01-20', '2021-01-25', '2021-01-31']
+                }
+            }
+        }
+    });
+    </script>
+
+</body>
